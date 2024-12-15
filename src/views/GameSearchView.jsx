@@ -48,7 +48,6 @@ export default function GamesSearchView() {
   }
 
   function handleSearchPage(page) {
-    console.log('Handling page ', page);
     if (page < 1 || page > availablePages || page == pageNumber) {
       return; // Don't do anything
     }

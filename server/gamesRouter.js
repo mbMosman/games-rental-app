@@ -29,8 +29,6 @@ GamesRouter.get('/', (req, res) => {
   const url = `${BASE_URL}/search?api_key=${API_KEY}&format=json&resources=game&field_list=${fields}&query=${searchString}&page=${page}`;
   axios.get(url)
     .then((response) => {
-      console.log(`Making request to Giant Bomb API, URL: ${url}`);
-      console.log('Giant Bomb response:', response.data);
       if (response.data.error === 'OK') {
         const result = {
           page_limit: response.data.limit,
@@ -41,12 +39,12 @@ GamesRouter.get('/', (req, res) => {
         }
         res.send(result);
       } else {
-        console.log(`Error searching games from API:`, response.data.error);
+        console.error(`Error searching games from API. URL: ${url}, Error:`, response.data.error);
         res.sendStatus(500);
       }
     })
     .catch( (err) => {
-      console.log(`Error searching games from API:`, err);
+      console.error(`Error searching games from API. URL: ${url}, Error:`, err);
       res.sendStatus(500);
     })
 });
@@ -62,15 +60,13 @@ GamesRouter.get('/:guid', (req, res) => {
   const url = `${BASE_URL}/games/${id}?api_key=${API_KEY}&format=json`;
   axios.get(url)
     .then((response) => {
-      console.log(`Making request to Giant Bomb API, URL: ${url}`);
-      console.log('Giant Bomb response:', response.data);
       if (response.data.error === 'OK') {
         const result = response.data
         res.send(result);
       }
     })
     .catch( (err) => {
-      console.log(`Error getting game from API:`, err);
+      console.error(`Error getting game from API. URL: ${url}, Error:`, err);
       res.sendStatus(500);
     })
 });
