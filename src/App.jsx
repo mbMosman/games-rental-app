@@ -12,7 +12,7 @@ export default function App() {
   return (
     <BrowserRouter>
       <header className='app-header'>
-        <h1>Games Rental</h1>
+        <h1>Game Rental App</h1>
       </header>
       <main>
         <Routes>

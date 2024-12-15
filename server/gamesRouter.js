@@ -3,7 +3,6 @@ import axios from 'axios';
 
 const BASE_URL = 'https://www.giantbomb.com/api';
 const API_KEY = process.env.GIANTBOMB_API_KEY;
-console.log('API_KEY', API_KEY);
 
 const GamesRouter = express.Router();
 
