@@ -1,28 +1,35 @@
-import { useState, useEffect } from 'react';
+import { useCart, useCartDispatch } from '../contexts/CartContext';
 
 export default function CartView() {
 
-  const cart = [];
-  const [errorMessage, setErrorMessage] = useState('');
+  const cart = useCart();
+  const dispatch = useCartDispatch();
 
-  function handleError(error) {
-    console.log('Search error: ', error);
-    setErrorMessage('Error performing search, please try again.');
+  function handleRemove(game) {
+    dispatch({ type: 'REMOVE_SELECTION', payload: game });
   }
 
   return (
     <div className="view">
       <h2>Rental Cart</h2>
       <div className="cart">
-        {
-          (cart.length) === 0 ? 
+        { cart.length === 0 ? 
             <p>No games selected.</p> :
             cart.map(game => (
-                <div key={game.id} className="game">
-                  <h3>{game.name}</h3>
-                  <p>{game.image}</p>
-                  <p>{game.deck}</p>
+              <div key={game.id} className="card">
+                <div className="card-contents">
+                  <div className="game-img">
+                    <img src={game.image.medium_url} title={game.name + ' box'} />
+                  </div>
+                  <div className="game-detail">
+                    <header className="game-header">
+                      <h3>{game.name}</h3>
+                      <button className="btn-game" onClick={(event) => handleRemove(game)}>Remove</button>
+                    </header>
+                    <p>{game.deck}</p>
+                  </div>
                 </div>
+              </div>
             )
           )
         }
