@@ -3,13 +3,23 @@ body {
   background-color: grey;
 }
 
-.app-header {
+.title-bar {
   background-color: burlywood;
-  display: flex;
-  justify-content: center;
-  align-items: center;
   height: 60px;
+  padding: 0 1em;
   margin-bottom: 2em;
+}
+
+.nav-bar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.nav-link {
+  font-size: 1.2em;
+  text-decoration: none;
+  color: indigo
 }
 
 h1, h2, h3, h4, h5, h6, p {
@@ -50,20 +60,24 @@ footer {
   text-align: center;
 }
 
-a, a:visited {
+.footer-link, .footer-link:visited, .icon-link, .icon-link:visited {
   color: black;
   text-decoration: none;
 }
 
-.logo-link i svg {
+.icon svg {
   height: 1.5em;
   width: 1.5em;
 }
 
-.search-results {
+.search-results, .cart {
   display: flex;
   flex-direction: column;
   gap: 1em;
+}
+
+.pagination {
+  align-self: center;
 }
 
 .card {
@@ -84,7 +98,6 @@ a, a:visited {
   gap: 1em;
   border-bottom: 1px solid burlywood;
   padding-bottom: 1em;
-  /*justify-content: space-between;*/
 }
 
 .game-detail {
@@ -102,7 +115,11 @@ a, a:visited {
   width: 130px;
 }
 
-.btn-rent-game {
+.btn-page.active {
+  background-color: burlywood;
+}
+
+.btn-game {
   background-color: burlywood;
   border-radius: 5px;
 }
