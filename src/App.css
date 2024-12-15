@@ -1,0 +1,135 @@
+body {
+  margin: 0;
+  background-color: grey;
+}
+
+.app-header {
+  background-color: burlywood;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 60px;
+  margin-bottom: 2em;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  margin: 0;
+}
+
+main {
+  max-width: 800px;
+  margin: auto;
+  margin-bottom: 2em;
+}
+
+footer {
+  border-top: 1px solid black;
+  text-align: center;
+  padding-bottom: 2em;
+}
+
+.view {
+  display: flex;
+  flex-direction: column;
+  gap: 1em;
+}
+
+.view-header {
+  margin: 0;
+  text-align: center;
+}
+
+a, a:visited {
+  color: black;
+  text-decoration: none;
+}
+
+.logo-link i svg {
+  height: 1.5em;
+  width: 1.5em;
+}
+
+.search-results {
+  display: flex;
+  flex-direction: column;
+  align-items: baseline;
+  justify-content: baseline;
+  gap: 1em;
+}
+
+.card {
+  background-color: bisque;
+  border: solid 1px black;
+  border-radius: 5px;
+  min-height: 80px;
+  width: 100%;
+}
+
+.card-contents {
+  display: flex;
+  align-items: stretch;
+  padding: 0.8em;
+}
+
+.game-header {
+  display: flex;
+  gap: 1em;
+  border-bottom: 1px solid burlywood;
+  padding-bottom: 1em;
+  /*justify-content: space-between;*/
+}
+
+.game-detail {
+  width: 100%;
+}
+
+.game-detail p {
+  margin-bottom: 0;
+}
+
+.game-img {
+  display: flex;
+  align-items: center;
+  margin-right: 1em;
+  ;
+}
+
+.game-img img {
+  border: solid 2px black;
+  width: 130px;
+}
+
+.btn-rent-game {
+  background-color: burlywood;
+  border-radius: 5px;
+}
+
+.search-form {
+  background-color: burlywood;
+  border: 2px solid black;
+  border-radius: 1em;
+  padding: 0.25em 1em;
+}
+
+.search-control {
+  display: flex;
+  width: 100%;
+}
+
+.search-input {
+  flex: 1;
+  width: 100%;
+  background-color: transparent;
+  border: none;
+}
+
+.search-input:focus {
+  outline: none;
+}
+
+.search-control button {
+  flex: none;
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+}
