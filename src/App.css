@@ -12,7 +12,7 @@ body {
   margin-bottom: 2em;
 }
 
-h1, h2, h3, h4, h5, h6 {
+h1, h2, h3, h4, h5, h6, p {
   margin: 0;
 }
 
@@ -26,6 +26,17 @@ footer {
   border-top: 1px solid black;
   text-align: center;
   padding-bottom: 2em;
+}
+
+.alert {
+  border: solid 2px black;
+  border-radius: 5px;
+  font-weight: bold;
+  padding: 0.5em;
+}
+
+.error {
+  background-color: brown;
 }
 
 .view {
@@ -52,8 +63,6 @@ a, a:visited {
 .search-results {
   display: flex;
   flex-direction: column;
-  align-items: baseline;
-  justify-content: baseline;
   gap: 1em;
 }
 
@@ -62,7 +71,6 @@ a, a:visited {
   border: solid 1px black;
   border-radius: 5px;
   min-height: 80px;
-  width: 100%;
 }
 
 .card-contents {
@@ -83,15 +91,10 @@ a, a:visited {
   width: 100%;
 }
 
-.game-detail p {
-  margin-bottom: 0;
-}
-
 .game-img {
   display: flex;
   align-items: center;
   margin-right: 1em;
-  ;
 }
 
 .game-img img {
